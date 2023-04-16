@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="dialog" stylesheets="@../../style/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.product.product.views.Popups.ProductEdit">
+   <children>
+      <VBox styleClass="dialog-icon">
+         <children>
+            <SVGPath content="M32 10l-16-8-16 8 16 8 16-8zM16 4.655l10.689 5.345-10.689 5.345-10.689-5.345 10.689-5.345zM28.795 14.398l3.205 1.602-16 8-16-8 3.205-1.602 12.795 6.398zM28.795 20.398l3.205 1.602-16 8-16-8 3.205-1.602 12.795 6.398z" scaleX="3.0" scaleY="3.0" />
+         </children>
+      </VBox>
+      <VBox styleClass="dialog-body" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="title" styleClass="dialog-title" text="Edit Product" />
+            <VBox styleClass="dialog-message-box">
+               <children>
+                  <Label fx:id="message" />
+                  <VBox>
+                     <children>
+                        <Label text="Category" />
+                        <ComboBox fx:id="category" maxWidth="1.7976931348623157E308" promptText="Select Categorie" styleClass="dialog-button-input" />
+                        <Label layoutX="10.0" layoutY="10.0" text="Name" />
+                        <TextField fx:id="name" promptText="Enter Product Name" />
+                        <Label layoutX="10.0" layoutY="63.0" text="Price" />
+                        <TextField fx:id="price" layoutX="10.0" layoutY="90.0" promptText="Enter Product Name" text="Enter Product price" />
+                        <Label layoutX="10.0" layoutY="117.0" text="Remark" />
+                     </children>
+                  </VBox>
+                  <TextArea fx:id="remark" prefHeight="70.0" prefWidth="400.0" promptText="Enter Remark" styleClass="dialog-button-input" />
+               </children>
+            </VBox>
+            <HBox styleClass="dialog-button-box">
+               <children>
+                  <Button fx:id="save" mnemonicParsing="false" onAction="#save" styleClass="wid-120" text="SAVE" />
+                  <Button fx:id="close" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#close" styleClass="wid-120" text="CLOSE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

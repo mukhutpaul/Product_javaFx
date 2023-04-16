@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<VBox id="Product" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="content-view" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.product.product.views.Products">
+   <children>
+      <VBox>
+         <children>
+            <HBox>
+               <children>
+                  <HBox id="Product" styleClass="content-view-header" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="title" text="Product" />
+                     </children>
+                  </HBox>
+                  <VBox onMouseClicked="#addNew" styleClass="add-button">
+                     <children>
+                        <SVGPath content="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z" scaleX="1.5" scaleY="1.5" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox styleClass="search-bar" stylesheets="@../style/application.css">
+         <children>
+            <ComboBox fx:id="category" prefWidth="150.0" />
+            <TextField fx:id="name" promptText="Product Name" />
+            <Button mnemonicParsing="false" onAction="#search" styleClass="wid-120" text="SEARCH" />
+            <Button layoutX="352.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" styleClass="wid-120" text="CLEAR" />
+            <Button fx:id="upload" layoutX="581.0" layoutY="10.0" mnemonicParsing="false" onAction="#upload" styleClass="wid-120" text="UPLOAD" />
+         </children>
+      </HBox>
+      <VBox styleClass="table-wrapper" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <columns>
+                  <TableColumn maxWidth="65.0" minWidth="65.0" prefWidth="75.0" text="ID">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="id" />
+                      </cellValueFactory>
+                  </TableColumn>
+
+                  <TableColumn maxWidth="230.0" minWidth="230.0" prefWidth="230.0" text="CATEGORY">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="category" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="220.0" minWidth="220.0" prefWidth="220.0" text="PRODUCT NAME">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="PRICE">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="priceStr" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="109.60003662109375" text="VALID">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="validStr" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="109.60003662109375" text="REMARK">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="remark" />
+                      </cellValueFactory>
+
+                  </TableColumn>
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</VBox>
